@@ -19,4 +19,15 @@ class Character < ApplicationRecord
 
     return the_one
   end
+
+   def actor
+    key = self.actor_id
+
+    matching_set = Actor.where({ :id => key })
+
+    the_one = matching_set.at(0)
+
+    return the_one
+  end
+  
 end
